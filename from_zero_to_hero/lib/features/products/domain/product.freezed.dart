@@ -22,7 +22,7 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
 mixin _$Product {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get descrition => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
   double get discountPercentage => throw _privateConstructorUsedError;
   double get rating => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $ProductCopyWith<$Res> {
   $Res call(
       {int id,
       String title,
-      String descrition,
+      String description,
       double price,
       double discountPercentage,
       double rating,
@@ -71,7 +71,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? descrition = null,
+    Object? description = null,
     Object? price = null,
     Object? discountPercentage = null,
     Object? rating = null,
@@ -90,9 +90,9 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      descrition: null == descrition
-          ? _value.descrition
-          : descrition // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       price: null == price
           ? _value.price
@@ -140,7 +140,7 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
   $Res call(
       {int id,
       String title,
-      String descrition,
+      String description,
       double price,
       double discountPercentage,
       double rating,
@@ -164,7 +164,7 @@ class __$$ProductImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? descrition = null,
+    Object? description = null,
     Object? price = null,
     Object? discountPercentage = null,
     Object? rating = null,
@@ -183,9 +183,9 @@ class __$$ProductImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      descrition: null == descrition
-          ? _value.descrition
-          : descrition // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       price: null == price
           ? _value.price
@@ -229,7 +229,7 @@ class _$ProductImpl implements _Product {
   _$ProductImpl(
       {required this.id,
       required this.title,
-      required this.descrition,
+      required this.description,
       required this.price,
       required this.discountPercentage,
       required this.rating,
@@ -248,7 +248,7 @@ class _$ProductImpl implements _Product {
   @override
   final String title;
   @override
-  final String descrition;
+  final String description;
   @override
   final double price;
   @override
@@ -273,7 +273,7 @@ class _$ProductImpl implements _Product {
 
   @override
   String toString() {
-    return 'Product(id: $id, title: $title, descrition: $descrition, price: $price, discountPercentage: $discountPercentage, rating: $rating, stock: $stock, brand: $brand, category: $category, thumbnail: $thumbnail, images: $images)';
+    return 'Product(id: $id, title: $title, description: $description, price: $price, discountPercentage: $discountPercentage, rating: $rating, stock: $stock, brand: $brand, category: $category, thumbnail: $thumbnail, images: $images)';
   }
 
   @override
@@ -283,8 +283,8 @@ class _$ProductImpl implements _Product {
             other is _$ProductImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.descrition, descrition) ||
-                other.descrition == descrition) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.discountPercentage, discountPercentage) ||
                 other.discountPercentage == discountPercentage) &&
@@ -304,7 +304,7 @@ class _$ProductImpl implements _Product {
       runtimeType,
       id,
       title,
-      descrition,
+      description,
       price,
       discountPercentage,
       rating,
@@ -332,7 +332,7 @@ abstract class _Product implements Product {
   factory _Product(
       {required final int id,
       required final String title,
-      required final String descrition,
+      required final String description,
       required final double price,
       required final double discountPercentage,
       required final double rating,
@@ -349,7 +349,7 @@ abstract class _Product implements Product {
   @override
   String get title;
   @override
-  String get descrition;
+  String get description;
   @override
   double get price;
   @override

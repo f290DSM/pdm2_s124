@@ -33,10 +33,10 @@ class CategoryPage extends ConsumerWidget {
             error.toString(),
           ),
         ),
-        loading: () => const SizedBox(
-          width: 150,
-          height: 150,
-          child: Center(
+        loading: () => const Center(
+          child: SizedBox(
+            width: 150,
+            height: 150,
             child: CircularProgressIndicator(),
           ),
         ),

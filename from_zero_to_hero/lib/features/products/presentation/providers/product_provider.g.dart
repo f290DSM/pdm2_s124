@@ -22,7 +22,7 @@ final productRepositoryProvider =
 );
 
 typedef ProductRepositoryRef = AutoDisposeProviderRef<ProductRepositoryImpl>;
-String _$productByCategoryHash() => r'44962a776f3efe2bcd7c8bcbe9ac4750f3dade27';
+String _$productByCategoryHash() => r'74b3edf96dc2c764eb614a5c3f89c5dc53556a62';
 
 /// Copied from Dart SDK
 class _SystemHash {

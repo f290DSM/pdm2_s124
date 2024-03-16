@@ -8,7 +8,7 @@ class Product with _$Product {
   factory Product(
       {required int id,
       required String title,
-      required String descrition,
+      required String description,
       required double price,
       required double discountPercentage,
       required double rating,

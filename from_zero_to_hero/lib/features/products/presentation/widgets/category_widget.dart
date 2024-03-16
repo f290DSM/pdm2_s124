@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:from_zero_to_hero/features/products/presentation/products_category_page.dart';
 
 MaterialColor getMaterialColor(int index) {
   final colors = [
@@ -51,6 +52,12 @@ class CategoryCard extends StatelessWidget {
         splashColor: color.shade900,
         onTap: () {
           //TODO: Navegar para a página de produtos
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProductBycategoryConsumer(category),
+            ),
+          );
         },
         child: SizedBox(
           width: 200,
