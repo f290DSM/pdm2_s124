@@ -8,7 +8,7 @@ class CategoryPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var categories = ref.watch(categoriesProvider);
+    final categories = ref.watch(categoriesProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -18,22 +18,27 @@ class CategoryPage extends ConsumerWidget {
       body: categories.when(
         data: (data) {
           return ListView.builder(
-            itemCount: 20,
+            itemCount: data.length,
             itemBuilder: (context, index) {
+              final category = data[index];
               return CategoryCard(
-                category: data[index],
+                category: category,
                 indexColor: index,
               );
             },
           );
         },
-        error: (error, stackTrace) {
-          return Center(
-            child: Text(error.toString()),
-          );
-        },
-        loading: () => const Center(
-          child: CircularProgressIndicator(),
+        error: (error, stackTrace) => Center(
+          child: Text(
+            error.toString(),
+          ),
+        ),
+        loading: () => const SizedBox(
+          width: 150,
+          height: 150,
+          child: Center(
+            child: CircularProgressIndicator(),
+          ),
         ),
       ),
     );
