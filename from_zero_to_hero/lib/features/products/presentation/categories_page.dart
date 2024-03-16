@@ -11,30 +11,31 @@ class CategoryPage extends ConsumerWidget {
     var categories = ref.watch(categoriesProvider);
 
     return Scaffold(
-        appBar: AppBar(
-          elevation: 8,
-          title: const Text('Category Products'),
+      appBar: AppBar(
+        elevation: 8,
+        title: const Text('Category Products'),
+      ),
+      body: categories.when(
+        data: (data) {
+          return ListView.builder(
+            itemCount: 20,
+            itemBuilder: (context, index) {
+              return CategoryCard(
+                category: data[index],
+                indexColor: index,
+              );
+            },
+          );
+        },
+        error: (error, stackTrace) {
+          return Center(
+            child: Text(error.toString()),
+          );
+        },
+        loading: () => const Center(
+          child: CircularProgressIndicator(),
         ),
-        body: categories.when(
-          data: (data) {
-            return ListView.builder(
-              itemCount: 20,
-              itemBuilder: (context, index) {
-                return CategoryCard(
-                  category: data[index],
-                  indexColor: index,
-                );
-              },
-            );
-          },
-          error: (error, stackTrace) {
-            return Center(
-              child: Text(error.toString()),
-            );
-          },
-          loading: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
-        ));
+      ),
+    );
   }
 }
