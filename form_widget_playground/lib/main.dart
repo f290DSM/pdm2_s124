@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:faker/faker.dart';
 
@@ -71,6 +72,9 @@ class _HomePageState extends State<HomePage> {
   ];
 
   List<String> selectedMonth = [];
+
+  var textController = TextEditingController();
+  var nome = '';
 
   @override
   Widget build(BuildContext context) {
@@ -525,6 +529,60 @@ class _HomePageState extends State<HomePage> {
                           ))
                       .toList(),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 24),
+                  child: Text('Como utilizar inputs de texto?',
+                      style: Theme.of(context).textTheme.displaySmall),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 24),
+                  child: Text('TextField',
+                      style: Theme.of(context).textTheme.bodyLarge),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 16.0, right: 16, bottom: 16),
+                  child: TextField(
+                    controller: textController,
+                    decoration: InputDecoration(
+                      helperText: 'Buscar',
+                      suffixIcon: IconButton(
+                        icon: const Icon(
+                          Icons.search,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            nome = textController.text;
+                          });
+                        },
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(32),
+                      ),
+                      filled: true,
+                      // label: const Text('E-mail'),
+                    ),
+                    // onChanged: (value) {
+                    //   setState(() {});
+                    // print('onChanged: $value');
+                    // },
+                    // onSubmitted: (value) {
+                    //   print('onSubmitted: $value');
+                    // },
+                    // onEditingComplete: () {
+                    //   setState(() {});
+                    // },
+                  ),
+                ),
+                Text('Conteudo TextField: $nome'),
+                FilledButton(
+                    onPressed: () {
+                      setState(() {
+                        nome = textController.text;
+                      });
+                    },
+                    child: const Text('SALVAR'))
               ],
             ),
           ),
